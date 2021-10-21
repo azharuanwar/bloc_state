@@ -11,10 +11,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  ColorBloc bloc = ColorBloc();
+
+  @override
+  void dispose() {
+    bloc.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    ColorBloc bloc = ColorBloc();
-
     return MaterialApp(
       home: Scaffold(
         floatingActionButton: Row(
